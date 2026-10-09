@@ -1,31 +1,34 @@
-# Avaliação Prática: API de Flashcards
+AVALIAÇÃO DE FLASHCARDS — RESPOSTAS DA PARTE TEÓRICA
+Node.js e Fastify — Seção 7 do roteiro
 
-## Primeiros passos (cerca de 5 min)
+Resposta: B.
+Um ambiente de execução que roda JavaScript fora do navegador, baseado no motor V8.
 
-```bash
+2. Resposta: C.
+Usa I/O não bloqueante com um event loop. Enquanto espera o resultado de uma operação, continua atendendo outras requisições.
+
+3. Resposta: A.
 npm install
-npx prisma migrate dev --name init
-npm run dev
-```
 
-O servidor sobe em **http://localhost:3333**. Os baralhos 1, 2 e 3 já são criados pelo seed.
+4. Resposta: D.
+devDependencies são usadas durante o desenvolvimento, como compilação, testes e modo watch. dependencies são necessárias para a aplicação funcionar.
 
-## O que fazer
+5. Resposta: B.
+Pausa somente aquela função async até a Promise ser resolvida, sem bloquear o event loop.
 
-Implemente as rotas em **`src/routes/cards.ts`**, completando os blocos `// TODO:`.
-Use `src/routes/decks.ts` como exemplo. A especificação completa está no **ROTEIRO_AVALIACAO**.
+6. Resposta: A.
+Um framework web para Node.js focado em desempenho, com sistema de plugins e validação de rotas por schema.
 
-| Rota | Pontos |
-|---|---|
-| `POST /cards` | 3,0 |
-| `GET /cards` | 2,0 |
-| `GET /cards/:id` | 2,0 |
-| `DELETE /cards/:id` | 2,0 |
-| Qualidade do código | 1,0 |
-| Bônus `POST /cards/:id/review` | +1,0 |
+7. Resposta: C.
+Registra um plugin, a função com as rotas de cards, na aplicação Fastify.
 
-Para testar, use `requests.http` (extensão REST Client), Insomnia, Postman ou Thunder Client.
+8. Resposta: D.
+ID: request.params.id
+Modo: request.query.modo
+Nota: request.body.grade
 
-Banco bagunçado? Rode `npm run db:reset`.
-Você precisa completar o código do arquivo server.ts
-A prova deve ser entregue as 21:45
+9. Resposta: B.
+Responde ao cliente com o código HTTP 201 (Created) e o card no corpo da resposta, em JSON.
+
+10. Resposta: C.
+Valida o body antes de executar o handler, responde 400 automaticamente se ele for inválido e tipa request.body no TypeScript.
